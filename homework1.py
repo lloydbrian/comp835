@@ -1,5 +1,5 @@
 """
-comp805
+comp835
 homework1 - a class implementation to illustrate using a dns
 resolver python package that reads through a file containing
 hostnames
