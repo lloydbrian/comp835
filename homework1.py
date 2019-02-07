@@ -8,7 +8,7 @@ Python version: 3.6.6
 Required PIP Packages: homework1_requirements.txt
 
 Lloyd Dagoc
-University of New Hanmpshire
+University of New Hampshire
 """
 
 from dns import resolver
@@ -28,19 +28,21 @@ class Homework1():
     def resolve_hosts(self, filename):
         filename = filename
         my_resolver = resolver.Resolver()
-        line_list = []
 
         try:
             with open(filename) as f_handler:
+
+                dig_dict = {}
                 for line_in_file in f_handler:
                     line_in_file = line_in_file.rstrip()
-
-                    print(line_in_file)
                     dig_info = my_resolver.query(line_in_file, "A")
 
-                    # TODO: create dictionary of lists
+                    dig_list = []
                     for data in dig_info:
-                        print(data)
+                        dig_list.append(data)
+
+                    dig_dict[line_in_file] = dig_list
+                print(dig_dict)
 
         except IOError:
             print(filename + ": File does not exist")
