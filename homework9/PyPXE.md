@@ -9,7 +9,7 @@ Setup a Python2 environment, download the PyPXE server and run it in DHCPProxy m
 ```
 $ touch /tmp/lloyd.txt
 $ vi /tmp/lloyd.txt
-$ source activate py2
+$ source venvs/networkpy27/bin/activate
 (networkpy27) Lloyds-MB-Pro:homework9 lloydbrian$ pip install PyPXE
 (networkpy27) Lloyds-MB-Pro:homework9 lloydbrian$ pip install tftpy
 (networkpy27) Lloyds-MB-Pro:homework9 lloydbrian$ python --version
@@ -24,7 +24,7 @@ Python 2.7.10
 At another terminal, using the installed tftpy pip package, retrieve a file. Ensure you are running python2 virtualenv
 
 ```
-$ source activate py2
+$ source venvs/networkpy27/bin/activate
 (networkpy27) Lloyds-MB-Pro:homework9 lloydbrian$ python
 Python 2.7.10 (default, Feb 22 2019, 21:17:52)
 [GCC 4.2.1 Compatible Apple LLVM 10.0.1 (clang-1001.0.37.14)] on darwin
