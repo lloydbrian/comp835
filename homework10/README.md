@@ -19,6 +19,7 @@ Required PIP Packages: no additional pip packages required
 ### Program Logic
 * Compose a server using python which can respond to port 80 \
 with the address of the connecting client.
+* On the same server, make it respond to an http request with a 200 successful response. Make it accessible via browser.
 
 ### Core Deliverables
 * README.md
