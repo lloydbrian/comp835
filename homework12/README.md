@@ -17,7 +17,8 @@ Required Packages: None. All packages need to be through Anaconda
 * Requirements: None
 
 ### Program Logic
-*
+* Validate self-signed certificate
+* All private key files are not uploaded in github for security reasons
 
 ### Core Deliverables
 * README.md - This file

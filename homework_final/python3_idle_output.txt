@@ -1,0 +1,28 @@
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46)
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> D = {}
+>>> D["a"] = 1
+>>> D["b"] = 2
+>>> D["c"] = 3
+>>> D
+{'a': 1, 'b': 2, 'c': 3}
+>>> for k in D.keys():
+	print(D[k])
+
+
+1
+2
+3
+>>> for k,v in D.items():
+	print(k, " : ", v)
+
+
+a  :  1
+b  :  2
+c  :  3
+>>> keys = ["a", "b", "c"]
+>>> values = [1, 2, 3]
+>>> hash = {k:v for k, v in zip(keys, values)}
+>>> hash
+{'a': 1, 'b': 2, 'c': 3}
