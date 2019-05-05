@@ -4,8 +4,7 @@
 * University of New Hampshire
 
 Python version: 2.7.16 and 3.6.8
-Required PIP Packages: no additional pip packages required
-
+Required Packages: None. All packages need to be through Anaconda
 
 ### Homework Details
 * Homework11

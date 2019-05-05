@@ -1,0 +1,100 @@
+(python3vm) Lloyds-MB-Pro:homework12 lloydbrian$ openssl req \
+> -newkey rsa:20148 -nodes -keyout domain.key \
+> -out domain.csr
+Warning: It is not recommended to use more than 16384 bit for RSA keys.
+         Your key size is 20148! Larger key size may behave not as expected.
+Generating a RSA private key
+............................................................................................................................................................................................................+++
+........................................................................................................................................................................................................................................+++
+writing new private key to 'domain.key'
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:XX
+Locality Name (eg, city) []:XXXXXXX
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:comp835 Networks Unlimited Inc.
+Organizational Unit Name (eg, section) []:Network and Security
+Common Name (e.g. server FQDN or YOUR name) []:www.comp835.com
+Email Address []:comp835@gmail.com
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:bigSecurity
+An optional company name []:
+(python3vm) Lloyds-MB-Pro:homework12 lloydbrian$ ls
+domain.csr	domain.key
+
+
+
+
+(python3vm) Lloyds-MB-Pro:homework12 lloydbrian$ openssl req \
+> -newkey rsa:2048 -nodes \
+> -keyout domain.key \
+> -x509 -days 365 -out domain.crt
+Generating a RSA private key
+...............+++++
+..................................................................................................................+++++
+writing new private key to 'domain.key'
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:
+State or Province Name (full name) [Some-State]:
+Locality Name (eg, city) []:
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []:
+Email Address []:
+(python3vm) Lloyds-MB-Pro:homework12 lloydbrian$
+(python3vm) Lloyds-MB-Pro:homework12 lloydbrian$ ls
+README.md				domain.csr				domainfromExistingPrivateKey.csr
+domain.crt				domain.key				terminal_output.txt
+(python3vm) Lloyds-MB-Pro:homework12 lloydbrian$ cat domain.crt
+-----BEGIN CERTIFICATE-----
+MIIDazCCAlOgAwIBAgIURWZNBBISPxFklR5DPniitCQRqlQwDQYJKoZIhvcNAQEL
+BQAwRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoM
+GEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDAeFw0xOTA1MDUxOTU3MjNaFw0yMDA1
+MDQxOTU3MjNaMEUxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEw
+HwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQwggEiMA0GCSqGSIb3DQEB
+AQUAA4IBDwAwggEKAoIBAQDYLQMKp5WWmFZJeMC/s6VeLUIFhPn8+u24i19ivd5g
+aLmkHvNw2EVFybUbO9c7/AxZoehXJyKWmZfCAYdPEerLR7p/YebrD82Nc40GY63+
+AyccZ94y7AVyrElsMVbiiH6eNaHykGEd8RigJdMi5/e1T85rSnRPXvNIk8RimVfp
+tDUicZ4WpRrlLHiomPP2bxBPB1OY78ajQAvGGQFGI/5cj9ultpGhsgAxGwUfMW3v
+Byum0RBce9neURQLlbfs21xVRzz2xhKR8wl09Xg3XiJyzdxOPHGlfqQp8q6N3K/r
+I9oDY0qDB3x5frrR4qFXPp8Tt6lKGAutaALKyyCID8ZFAgMBAAGjUzBRMB0GA1Ud
+DgQWBBTYm55c2/rxj/oXtYgWVD0gu9SRzDAfBgNVHSMEGDAWgBTYm55c2/rxj/oX
+tYgWVD0gu9SRzDAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQAY
+xTnyKLbWufOxkyQbYOK8o0iVmp8YAhhaOoH4oe5o5+Km0eytuoyhBOaeappKFJxy
+I0vJsAwwNOxNZC3GbjTKNFnABAI2XlwUXCrf9HXqiZlHCXVxzs8EZYLF/smhEUlr
+8WVSCJJhWU7q3XxgyJZKgnavvfCqvGzrK7iDEnXwcX4dnqS6MC7rKUI07+2tUCtz
+LIgFEEfRgWlRC4Jr8R1+CQzoiDbyIhYI34MI5yntP+qJSHT3zuA5WtZ6IQkW9OaM
+Y6I88Q3PWNgLE/kBL+oArHxqtGaAz2qgPXcKOhI2RolFIarkjqQAqKvSuIfyBmOM
+PktyBPEXtjLkz9JQbMcn
+-----END CERTIFICATE-----
+
+
+(python3vm) Lloyds-MB-Pro:homework12 lloydbrian$ ls
+README.md				domain.crt				domainfromExistingPrivateKey.csr
+cert_client.py				domain.csr				domainrsa-des3.key
+cert_server.py				domain.key				server.crt
+client.crt				domainExistingCertAndKey.csr		server.key
+client.key				domainSelfSignedFromExistingKey.crt	terminal_output.txt
+(python3vm) Lloyds-MB-Pro:homework12 lloydbrian$ python cert_client.py
+SSL established. Peer: {'subject': ((('countryName', 'AU'),), (('stateOrProvinceName', 'Some-State'),), (('organizationName', 'Internet Widgits Pty Ltd'),), (('commonName', 'example.com'),)), 'issuer': ((('countryName', 'AU'),), (('stateOrProvinceName', 'Some-State'),), (('organizationName', 'Internet Widgits Pty Ltd'),), (('commonName', 'example.com'),)), 'version': 3, 'serialNumber': '15E20790E06AA153DB129D85137098BE21FE5FE2', 'notBefore': 'May  5 20:11:13 2019 GMT', 'notAfter': 'May  4 20:11:13 2020 GMT'}
+Sending: 'Hello, world!
+Closing connection
+(python3vm) Lloyds-MB-Pro:homework12 lloydbrian$ python cert_client.py
+SSL established. Peer: {'subject': ((('countryName', 'AU'),), (('stateOrProvinceName', 'Some-State'),), (('organizationName', 'Internet Widgits Pty Ltd'),), (('commonName', 'example.com'),)), 'issuer': ((('countryName', 'AU'),), (('stateOrProvinceName', 'Some-State'),), (('organizationName', 'Internet Widgits Pty Ltd'),), (('commonName', 'example.com'),)), 'version': 3, 'serialNumber': '15E20790E06AA153DB129D85137098BE21FE5FE2', 'notBefore': 'May  5 20:11:13 2019 GMT', 'notAfter': 'May  4 20:11:13 2020 GMT'}
+Sending: 'Hello, world!
+Closing connection
