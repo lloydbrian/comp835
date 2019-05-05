@@ -1,0 +1,59 @@
+Python 2.7.16 |Anaconda, Inc.| (default, Mar 14 2019, 16:24:02)
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> x = open("test.txt").read()
+>>> x
+'hi\n'
+>>> type(x)
+<type 'str'>
+>>> len(x)
+3
+>>> x[0]
+'h'
+>>> x[1]
+'i'
+>>> x[2]
+'\n'
+>>> x = open("chinese.txt").read()
+>>> x
+'hi\xe7\x8c\xab\n'
+>>> type(x)
+<type 'str'>
+>>> len(x)
+6
+>>> x[0]
+'h'
+>>> x[1]
+'i'
+>>> x[2]
+'\xe7'
+>>> x[3]
+'\x8c'
+>>> x[4]
+'\xab'
+>>> x[5]
+'\n'
+>>> y = x.decode("utf-8")
+>>> type(y)
+<type 'unicode'>
+>>> y
+u'hi\u732b\n'
+>>> len(y)
+4
+>>> y[0]
+u'h'
+>>> y[1]
+u'i'
+>>> y[2]
+u'\u732b'
+>>> print y
+hi猫
+>>> z = y.encode("utf-8")
+>>> type(z)
+<type 'str'>
+>>> len(z)
+6
+>>> z
+'hi\xe7\x8c\xab\n'
+>>> z == x
+True

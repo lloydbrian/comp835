@@ -1,0 +1,34 @@
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46)
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> x = open("chinese.txt").read()
+>>> x
+'hi猫\n'
+>>> type(x)
+<class 'str'>
+>>> len(x)
+4
+>>> x[0]
+'h'
+>>> x[1]
+'i'
+>>> x[2]
+'猫'
+>>> x[3]
+'\n'
+>>> x = open("chinese.txt" , "rb").read()
+>>> type(x)
+<class 'bytes'>
+>>> len(x)
+6
+>>> x
+b'hi\xe7\x8c\xab\n'
+>>> y = x.decode("utf-8")
+>>> y
+'hi猫\n'
+>>> x == y
+False
+>>> z = y.encode("utf-8")
+>>> x == z
+True
+>>> 
